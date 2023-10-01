@@ -56,7 +56,7 @@ Before using this script, make sure you have the following prerequisites install
    ![Screenshot 2023-10-01 at 12 20 45 PM](https://github.com/alexxisrangel/Home_Sales/assets/129305054/c6a8ed76-af09-4780-9aff-7ed190138778)
 
 
-##### Performance <a name="performance"></a>
+##### Performance 
 
 In conclusion, Parquet files had a better performance compared to cache data. Although in this example the differences were in milliseconds, in the long run it could potentialy save your stakeholder/client money and resources. 
 
