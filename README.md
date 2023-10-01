@@ -56,9 +56,15 @@ Before using this script, make sure you have the following prerequisites install
    ![Screenshot 2023-10-01 at 12 20 45 PM](https://github.com/alexxisrangel/Home_Sales/assets/129305054/c6a8ed76-af09-4780-9aff-7ed190138778)
 
 
-##### Performance 
+### Performance 
 
 In conclusion, Parquet files had a better performance compared to cache data. Although in this example the differences were in milliseconds, in the long run it could potentialy save your stakeholder/client money and resources. 
+
+Here are a couple of reasons why Parquet data has shorter runtime: 
+1. Data Serialization Format: Parquet is a columnar storage format optimized for query performance. It stores data in a highly compressed and columnar manner, which allows for efficient column pruning during query execution. This means that Parquet files only read the specific columns needed for a query, resulting in faster data access.
+2. Compression: Parquet files are typically compressed, which reduces the amount of data that needs to be read from disk during query execution. Compressed data can be read faster than uncompressed data, even when it's cached in memory.
+3. Disk I/O: Parquet files are organized in a way that is conducive to efficient data retrieval. Data is stored in a columnar format with metadata that allows Spark to skip irrelevant data quickly during query execution. Cached data, while in memory, may still need to be scanned sequentially for certain queries.
+4. Query Optimization: When data is cached, there is a possibility that cached data may be evicted from memory due to memory pressure caused by other operations. This eviction can lead to cache misses and slower query performance. Parquet data, being read directly from disk, does not face this issue.
 
 
    
